@@ -11,7 +11,7 @@ public class NewUser {
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("projetoJPA");
         EntityManager em = emf.createEntityManager();
 
-        User newuser = new User("diego", "diego@hotmail.com");
+        User newuser = new User("silvana", "silvana@hotmail.com");
 
         em.getTransaction().begin();
         em.persist(newuser);
