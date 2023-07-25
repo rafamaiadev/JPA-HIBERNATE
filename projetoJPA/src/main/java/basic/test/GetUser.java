@@ -6,19 +6,15 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
-public class NewUser {
+public class GetUser {
+
     public static void main(String[] args) {
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("projetoJPA");
         EntityManager em = emf.createEntityManager();
 
-        User newuser = new User("silvana", "silvana@hotmail.com");
+        User user = em.find(User.class, 1L);
+        //Serve para fazer uma consulta de um usuário.
+        System.out.println(user.getName());
 
-        em.getTransaction().begin();
-        em.persist(newuser);
-        //Serve para inserir um novo usuário no banco de dados
-        em.getTransaction().commit();
-
-        em.close();
-        emf.close();
     }
 }

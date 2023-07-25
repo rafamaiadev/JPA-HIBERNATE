@@ -9,14 +9,14 @@ import javax.persistence.TypedQuery;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class getUsers {
+public class GetUsers {
     public static void main(String[] args) {
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("projetoJPA");
         EntityManager em = emf.createEntityManager();
 
         String jpql = "select u from User u";
         TypedQuery<User> query = em.createQuery(jpql, User.class).setMaxResults(5);
-
+        //Interface usada para criar uma consulta personalizada e todos os usuários.
         List<User> users = query.getResultList();
 
         for (User user : users) {
