@@ -39,6 +39,9 @@ public class Dao<T> {
     public Dao<T> includeAtomic(T entity) {
         return this.openTransaction().includeTransaction(entity).closeTransaction();
     }
+    public List<T> getAll() {
+        return this.getAll(10, 0);
+    }
     public List<T> getAll(int qnt, int displacement) {
         if (classe == null) {
             throw new UnsupportedOperationException("Class null");
