@@ -5,6 +5,7 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import javax.persistence.TypedQuery;
 import java.util.List;
+import java.util.Objects;
 
 public class Dao<T> {
     private static EntityManagerFactory emf;
@@ -38,6 +39,9 @@ public class Dao<T> {
     }
     public Dao<T> includeAtomic(T entity) {
         return this.openTransaction().includeTransaction(entity).closeTransaction();
+    }
+    public T getById(Object id) {
+        return em.find(classe, id);
     }
     public List<T> getAll() {
         return this.getAll(10, 0);

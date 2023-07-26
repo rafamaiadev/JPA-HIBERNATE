@@ -9,6 +9,8 @@
         <class>basic.model.Product</class>
         <class>basic.model.onetoone.Client</class>
         <class>basic.model.onetoone.Seat</class>
+        <class>basic.model.onetomany.ItemRequest</class>
+        <class>basic.model.onetomany.Request</class>
 
         <properties>
             <property name="javax.persistence.jdbc.driver"
