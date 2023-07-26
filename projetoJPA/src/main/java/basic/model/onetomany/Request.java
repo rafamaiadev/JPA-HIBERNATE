@@ -2,6 +2,7 @@ package basic.model.onetomany;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 public class Request {
@@ -10,6 +11,8 @@ public class Request {
     private Long id;
     @Column(nullable = false)
     private Date date;
+    @OneToMany(mappedBy = "request")
+    private List<ItemRequest> itens;
 
     public Long getId() {
         return id;
@@ -22,6 +25,11 @@ public class Request {
     public Date getDate() {
         return date;
     }
+
+    public List<ItemRequest> getItens() {
+        return itens;
+    }
+
 
     public Request() {
         this(new Date());
