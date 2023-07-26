@@ -12,7 +12,7 @@ public class ChangeUser1 {
         EntityManager em = emf.createEntityManager();
 
         em.getTransaction().begin();
-        User user = em.find(User.class, 6L);
+        User user = em.find(User.class, 5L);
         user.setName("Raphael");
         user.setEmail("rafamaia27@hotmail.com");
 

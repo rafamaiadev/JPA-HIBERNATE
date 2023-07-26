@@ -5,7 +5,6 @@
              xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
     <persistence-unit name="projetoJPA">
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
-        <mapping-file>META-INF/queries.xml</mapping-file>
         <class>basic.model.User</class>
         <class>basic.model.Product</class>
         <class>basic.model.onetoone.Client</class>
@@ -14,6 +13,8 @@
         <class>basic.model.onetomany.Request</class>
         <class>basic.model.manytomany.Nephew</class>
         <class>basic.model.manytomany.Uncle</class>
+        <class>basic.model.inheritance.Student</class>
+        <class>basic.model.inheritance.StudentShip</class>
 
         <properties>
             <property name="javax.persistence.jdbc.driver"
